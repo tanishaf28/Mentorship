@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Marketing & Tech Certifications Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFAF6;
+    --charcoal: #1C1C1C;
+    --deep: #2A2520;
+    --gold: #B8935A;
+    --gold-light: #D4AA72;
+    --rose: #C97B8A;
+    --sage: #7A9E7E;
+    --muted: #7A7268;
+    --border: #E0D8CE;
+    --card-bg: #FFFFFF;
+    --tag-tech: #2A4A6B;
+    --tag-beauty: #8B4A6B;
+    --tag-analytics: #3A6B5A;
+    --tag-ads: #6B4A2A;
+    --tag-luxury: #6B2A4A;
+    --tag-social: #2A5A6B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* Header */
+  header {
+    background: var(--deep);
+    color: var(--cream);
+    padding: 60px 40px 50px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,147,90,0.2);
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    border: 1px solid rgba(184,147,90,0.12);
+  }
+
+  .header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 5vw, 62px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--cream);
+    max-width: 700px;
+    margin-bottom: 20px;
+  }
+
+  header h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  header p {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    color: rgba(247,243,238,0.5);
+    max-width: 500px;
+  }
+
+  .header-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(184,147,90,0.2);
+  }
+
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(247,243,238,0.4);
+    margin-top: 4px;
+  }
+
+  /* Main layout */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 30px;
+  }
+
+  /* Section titles */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    margin-top: 50px;
+  }
+  .section-header:first-child { margin-top: 0; }
+
+  .section-icon {
+    width: 36px; height: 36px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .section-title span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--charcoal);
+    display: block;
+    margin-top: 2px;
+  }
+
+  /* Grid */
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  /* Card */
+  .cert-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent-color, var(--gold));
+    border-radius: 12px 12px 0 0;
+  }
+
+  .cert-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .brand-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--cream);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  .free-badge {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    color: var(--sage);
+    background: rgba(122,158,126,0.1);
+    border: 1px solid rgba(122,158,126,0.3);
+    padding: 3px 10px;
+    border-radius: 20px;
+  }
+
+  .cert-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--deep);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .cert-desc {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+    flex-grow: 1;
+    margin-bottom: 16px;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
+  }
+
+  .cert-tag {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+    color: white;
+    font-weight: 500;
+  }
+
+  .cert-link {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--gold);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+  }
+
+  .cert-link:hover {
+    color: var(--deep);
+    border-bottom-color: var(--gold);
+  }
+
+  .cert-link::after { content: '→'; font-size: 11px; }
+
+  /* Note box */
+  .note-box {
+    background: rgba(184,147,90,0.08);
+    border: 1px solid rgba(184,147,90,0.2);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 30px;
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .note-box strong { color: var(--gold); font-weight: 500; }
+
+  /* Tag colors */
+  .tag-tech { background: var(--tag-tech); }
+  .tag-beauty { background: var(--tag-beauty); }
+  .tag-analytics { background: var(--tag-analytics); }
+  .tag-ads { background: var(--tag-ads); }
+  .tag-luxury { background: var(--tag-luxury); }
+  .tag-social { background: var(--tag-social); }
+  .tag-email { background: #4A3A6B; }
+  .tag-design { background: #6B5A2A; }
+
+  /* Accent colors per card */
+  .accent-gold { --accent-color: var(--gold); }
+  .accent-rose { --accent-color: var(--rose); }
+  .accent-sage { --accent-color: var(--sage); }
+  .accent-blue { --accent-color: #4A6B8B; }
+  .accent-purple { --accent-color: #8B5A8B; }
+
+  /* Divider */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 50px 0 0;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    header { padding: 40px 20px; }
+    .header-stats { gap: 20px; }
+    main { padding: 30px 16px; }
+    .cert-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">Career Growth Resource</div>
+  <h1>Free Certifications for<br><em>Marketers & Creators</em></h1>
+  <p>Curated list of 100% free (or free-to-start) professional certifications — from digital marketing to luxury brands and beauty industry credentials.</p>
+  <div class="header-stats">
+    <div class="stat-item">
+      <div class="stat-num">25+</div>
+      <div class="stat-label">Certifications</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">$0</div>
+      <div class="stat-label">Cost to Start</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Categories</div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ─── DIGITAL MARKETING ─── -->
+  <div class="section-header">
+    <div class="section-icon" style="background:#FFF0DC;">📣</div>
+    <div class="section-title">01 &nbsp;Digital Marketing
+      <span>General Marketing Certifications</span>
+    </div>
+  </div>
+
+  <div class="cert-grid">
+
+    <div class="cert-card accent-gold">
+      <div class="card-top">
+        <span class="brand-badge">HubSpot Academy</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Digital Marketing Certification</div>
+      <div class="cert-desc">Learn SEO, social media, content strategy, paid advertising, and email marketing. One of the most recognized free marketing certs globally.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">Marketing</span>
+        <a href="https://academy.hubspot.com/courses/digital-marketing" class="cert-link" target="_blank">Enroll Now</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-gold">
+      <div class="card-top">
+        <span class="brand-badge">HubSpot Academy</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Inbound Marketing Certification</div>
+      <div class="cert-desc">Master inbound methodology, content marketing, SEO, social promotion, and email marketing best practices from HubSpot experts.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">Marketing</span>
+        <a href="https://academy.hubspot.com/courses/inbound-marketing" class="cert-link" target="_blank">Enroll Now</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-gold">
+      <div class="card-top">
+        <span class="brand-badge">HubSpot Academy</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Social Media Marketing Certification</div>
+      <div class="cert-desc">Build a social media strategy, grow an audience, and learn paid and organic social media tactics across major platforms.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-social">Social Media</span>
+        <a href="https://academy.hubspot.com/courses/social-media" class="cert-link" target="_blank">Enroll Now</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">Google Skillshop</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Google Analytics Certification</div>
+      <div class="cert-desc">Validate your expertise in Google Analytics 4 — setting up properties, reporting tools, key metrics, and data-driven decision making.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-analytics">Analytics</span>
+        <a href="https://skillshop.withgoogle.com/" class="cert-link" target="_blank">Enroll Now</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">Google Skillshop</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Google Ads Certification (9 paths)</div>
+      <div class="cert-desc">Get certified in Search, Display, Video, Shopping, Apps, Measurement and more. All 9 Google Ads certifications are completely free via Skillshop.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">Paid Ads</span>
+        <a href="https://skillshop.withgoogle.com/googleads/" class="cert-link" target="_blank">Enroll Now</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">Google Digital Garage</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Fundamentals of Digital Marketing</div>
+      <div class="cert-desc">An IAB-accredited 40-module course covering digital marketing fundamentals. Perfect for beginners entering the field.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">Marketing</span>
+        <a href="https://learndigital.withgoogle.com/digitalgarage/course/digital-marketing" class="cert-link" target="_blank">Enroll Now</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── SOCIAL MEDIA & ADS ─── -->
+  <div class="section-header">
+    <div class="section-icon" style="background:#FFE8F0;">📱</div>
+    <div class="section-title">02 &nbsp;Social Media & Advertising
+      <span>Platform-Specific Ad Certifications</span>
+    </div>
+  </div>
+
+  <div class="cert-grid">
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">Meta Blueprint</span>
+        <span class="free-badge">Free (courses)</span>
+      </div>
+      <div class="cert-title">Meta Certified Digital Marketing Associate</div>
+      <div class="cert-desc">Learn to advertise on Facebook, Instagram & Messenger. Free 50+ online courses; the associate-level exam has a fee, but all prep courses are free. 30% discount available after passing a practice exam.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-social">Meta Ads</span>
+        <a href="https://www.facebookblueprint.com/student/catalog" class="cert-link" target="_blank">Start Learning</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">Meta Blueprint</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Meta Marketing Science Professional</div>
+      <div class="cert-desc">Master data interpretation, A/B testing, SQL basics, and marketing analytics to measure and optimize your Meta campaigns.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-analytics">Analytics</span>
+        <a href="https://www.facebookblueprint.com/student/page/289993-certifications" class="cert-link" target="_blank">Enroll Now</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">LinkedIn Marketing Labs</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">LinkedIn Marketing Solutions Fundamentals</div>
+      <div class="cert-desc">Demonstrate expertise in launching LinkedIn ad campaigns, understanding ad formats, and reaching B2B audiences effectively.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-social">B2B Marketing</span>
+        <a href="https://training.marketing.linkedin.com/fundamentals-exam" class="cert-link" target="_blank">Enroll Now</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">LinkedIn Marketing Labs</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">LinkedIn Marketing Strategy Certification</div>
+      <div class="cert-desc">Master organic and paid LinkedIn advertising together for a holistic media strategy — ideal for B2B marketers and agency professionals.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-social">B2B Strategy</span>
+        <a href="https://training.marketing.linkedin.com/" class="cert-link" target="_blank">Browse All</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-gold">
+      <div class="card-top">
+        <span class="brand-badge">Canva</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Canva Social Media Mastery</div>
+      <div class="cert-desc">Learn to design scroll-stopping social media graphics, brand kits, reels covers, and templates using Canva's Design School platform.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-design">Design</span>
+        <a href="https://www.canva.com/designschool/" class="cert-link" target="_blank">Enroll Now</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-gold">
+      <div class="card-top">
+        <span class="brand-badge">PayPal</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">PayPal Webinars & Sales Training</div>
+      <div class="cert-desc">Access free webinars and training on eCommerce, payment integrations, and online selling strategy to grow your business revenue.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">Sales</span>
+        <a href="https://www.paypal.com/us/brc/resources/webinars-trainings" class="cert-link" target="_blank">Access Free</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── TECH & DEVELOPMENT ─── -->
+  <div class="section-header">
+    <div class="section-icon" style="background:#E8F0FF;">💻</div>
+    <div class="section-title">03 &nbsp;Tech & Development
+      <span>Web Development & Python</span>
+    </div>
+  </div>
+
+  <div class="cert-grid">
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">IBM via Coursera</span>
+        <span class="free-badge">Audit Free</span>
+      </div>
+      <div class="cert-title">IBM Full Stack Software Developer</div>
+      <div class="cert-desc">Master front-end, back-end, and cloud-native development. Includes React, Node.js, Python, Django, Docker and Kubernetes. Certificate requires paid plan.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-tech">Web Dev</span>
+        <a href="https://www.coursera.org/professional-certificates/ibm-full-stack-cloud-developer" class="cert-link" target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">IBM via Coursera</span>
+        <span class="free-badge">Audit Free</span>
+      </div>
+      <div class="cert-title">IBM Front-End Developer Certificate</div>
+      <div class="cert-desc">Build job-ready front-end skills with HTML, CSS, JavaScript, React, and testing tools. Ideal for marketers who want to understand web development.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-tech">Front-End</span>
+        <a href="https://www.coursera.org/professional-certificates/ibm-frontend-developer" class="cert-link" target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">Microsoft via Coursera</span>
+        <span class="free-badge">Audit Free</span>
+      </div>
+      <div class="cert-title">Introduction to Python (Microsoft)</div>
+      <div class="cert-desc">Microsoft's official Python programming fundamentals course — covering syntax, data structures, and real-world applications in web and data science.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-tech">Python</span>
+        <a href="https://www.coursera.org/learn/microsoft-python-programming-fundamentals" class="cert-link" target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">IBM via Coursera</span>
+        <span class="free-badge">Audit Free</span>
+      </div>
+      <div class="cert-title">Python for Data Science, AI & Development</div>
+      <div class="cert-desc">IBM's Python course covering Pandas, NumPy, web scraping, REST APIs, and data visualization. Part of the IBM Data Science Professional Certificate.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-tech">Python / Data</span>
+        <a href="https://www.coursera.org/learn/python-for-applied-data-science-ai" class="cert-link" target="_blank">Explore</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note-box">
+    <strong>Note on Coursera:</strong> IBM and Microsoft courses can be audited for free (no certificate). To receive a certificate, Coursera Plus (~$59/month) or Financial Aid is required. Apply for Financial Aid if cost is a barrier — Coursera approves most applicants.
+  </div>
+
+  <!-- ─── EMAIL & AUTOMATION ─── -->
+  <div class="section-header">
+    <div class="section-icon" style="background:#F0F8F0;">✉️</div>
+    <div class="section-title">04 &nbsp;Email & Marketing Automation
+      <span>MailerLite, Marketo & More</span>
+    </div>
+  </div>
+
+  <div class="cert-grid">
+
+    <div class="cert-card accent-sage">
+      <div class="card-top">
+        <span class="brand-badge">MailerLite Academy</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">MailerLite Email Marketing Fundamentals</div>
+      <div class="cert-desc">Master email campaign creation, automations, landing pages, and list management with MailerLite — and earn a shareable certificate.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-email">Email Marketing</span>
+        <a href="https://academy.mailerlite.com/courses/mailerlite-fundamentals" class="cert-link" target="_blank">Enroll Free</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-rose">
+      <div class="card-top">
+        <span class="brand-badge">Adobe Experience League</span>
+        <span class="free-badge">Exam fee applies</span>
+      </div>
+      <div class="cert-title">Adobe Marketo Engage Business Practitioner</div>
+      <div class="cert-desc">Industry's top marketing automation certification. Free prep courses and study materials on Experience League. Exam has a fee; renewals are free.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-email">Automation</span>
+        <a href="https://experienceleague.adobe.com/en/browse/marketo-engage" class="cert-link" target="_blank">Prep Free</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-gold">
+      <div class="card-top">
+        <span class="brand-badge">HubSpot Academy</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Email Marketing Certification</div>
+      <div class="cert-desc">Learn to create high-performing email campaigns, list segmentation, automation workflows, and deliverability best practices.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-email">Email Marketing</span>
+        <a href="https://academy.hubspot.com/courses/email-marketing" class="cert-link" target="_blank">Enroll Free</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── BRAND STRATEGY & INSIGHTS ─── -->
+  <div class="section-header">
+    <div class="section-icon" style="background:#FFF5E8;">🏛️</div>
+    <div class="section-title">05 &nbsp;Brand Strategy & Market Research
+      <span>Kantar, London Business School & PCM</span>
+    </div>
+  </div>
+
+  <div class="cert-grid">
+
+    <div class="cert-card accent-gold">
+      <div class="card-top">
+        <span class="brand-badge">Kantar</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Kantar Brand Strategy Masterclass</div>
+      <div class="cert-desc">Free video masterclass series from the world's #1 marketing data company. Covers brand equity, emotional connections, distinctive brand assets, and the MDS framework.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">Brand Strategy</span>
+        <a href="https://try.kantar.com/brand-strategy-masterclass/" class="cert-link" target="_blank">Register Free</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-gold">
+      <div class="card-top">
+        <span class="brand-badge">Kantar BrandZ</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Kantar BrandSnapshot — Brand Equity Insights</div>
+      <div class="cert-desc">Instantly access free brand equity intelligence on 10,000+ brands across 850+ categories. Understand what makes brands meaningfully different.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-analytics">Market Research</span>
+        <a href="https://www.kantar.com/campaigns/blueprint-for-brand-growth" class="cert-link" target="_blank">Access Free</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">London Business School</span>
+        <span class="free-badge">Free (audit)</span>
+      </div>
+      <div class="cert-title">Brand Strategy Certification</div>
+      <div class="cert-desc">Explore LBS courses on brand management, positioning, and marketing strategy via Coursera. Audit available free; certfied completion requires subscription.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">Brand Strategy</span>
+        <a href="https://www.coursera.org/search?query=london+business+school+brand" class="cert-link" target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">AMA / PCM</span>
+        <span class="free-badge">Exam fee applies</span>
+      </div>
+      <div class="cert-title">Professional Certified Marketer (PCM®)</div>
+      <div class="cert-desc">The American Marketing Association's gold-standard certification for marketing professionals. Free study resources available; exam fee required for certification.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">Marketing</span>
+        <a href="https://www.ama.org/training-certifications/pcm-certification/" class="cert-link" target="_blank">Learn More</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-gold">
+      <div class="card-top">
+        <span class="brand-badge">Alison</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Fundamentals of Strategic Marketing</div>
+      <div class="cert-desc">Free Alison course covering strategic marketing, market research, consumer behavior, and competitive analysis fundamentals.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">Strategy</span>
+        <a href="https://alison.com/course/fundamentals-in-strategic-marketing-and-the-marketing-environment" class="cert-link" target="_blank">Enroll Free</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── BEAUTY & LUXURY ─── -->
+  <div class="section-header">
+    <div class="section-icon" style="background:#FFECF4;">💄</div>
+    <div class="section-title">06 &nbsp;Beauty Marketing & Luxury Brands
+      <span>Industry-Specific Certifications</span>
+    </div>
+  </div>
+
+  <div class="cert-grid">
+
+    <div class="cert-card accent-rose">
+      <div class="card-top">
+        <span class="brand-badge">INSIDE LVMH</span>
+        <span class="free-badge">Free ★ Most Prestigious</span>
+      </div>
+      <div class="cert-title">LVMH Luxury Industry Certificate</div>
+      <div class="cert-desc">The most coveted free luxury certification — a 30-hour program from the world's largest luxury group (Louis Vuitton, Dior, Sephora). Covers luxury brand management, retail, sustainability & marketing. Opens twice yearly (April & September). Next opens April 2026.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-luxury">Luxury Brands</span>
+        <a href="https://www.insidelvmh.com/certificate" class="cert-link" target="_blank">Register Free</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-rose">
+      <div class="card-top">
+        <span class="brand-badge">FutureLearn</span>
+        <span class="free-badge">Audit Free</span>
+      </div>
+      <div class="cert-title">Beauty Decoded — Global Beauty Business Strategy</div>
+      <div class="cert-desc">3-week course covering global beauty business strategy, marketing across geographies, segmentation, targeting, and brand positioning. Taught by experts with Revlon, Estée Lauder, and IMAN Cosmetics experience.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-beauty">Beauty Marketing</span>
+        <a href="https://www.futurelearn.com/courses/beauty-decoded-strategy-in-the-global-beauty-business" class="cert-link" target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-purple">
+      <div class="card-top">
+        <span class="brand-badge">Coursera</span>
+        <span class="free-badge">Audit Free</span>
+      </div>
+      <div class="cert-title">Management of Fashion & Luxury Companies</div>
+      <div class="cert-desc">Learn how top luxury and fashion companies are managed — covering brand strategy, business models, luxury goods, and management frameworks. ~12 hours; beginner-friendly.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-luxury">Luxury Management</span>
+        <a href="https://www.coursera.org/learn/fashion-luxury-management" class="cert-link" target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-rose">
+      <div class="card-top">
+        <span class="brand-badge">Alison</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Alison Beauty & Cosmetology Courses</div>
+      <div class="cert-desc">Free beauty industry courses including cosmetology, skincare, salon management, and beauty business essentials. Certificates are recognized and free of cost.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-beauty">Beauty Industry</span>
+        <a href="https://alison.com/courses/beauty" class="cert-link" target="_blank">Enroll Free</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-rose">
+      <div class="card-top">
+        <span class="brand-badge">ELVTR (Paid)</span>
+        <span class="free-badge">Paid — Best in Class</span>
+      </div>
+      <div class="cert-title">Cosmetics Marketing & Partnerships</div>
+      <div class="cert-desc">Industry-leading course by a Global Marketing Director from Mario Badescu. Covers beauty brand identity, influencer marketing, retail partnerships, and pitch deck creation. Highly recommended for serious beauty marketers.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-beauty">Beauty Marketing</span>
+        <a href="https://elvtr.com/course/cosmetics-marketing-and-partnerships" class="cert-link" target="_blank">Learn More</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-rose">
+      <div class="card-top">
+        <span class="brand-badge">Glow & Lovely</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">English for Beauty & Wellness</div>
+      <div class="cert-desc">Free certificate course from the Glow & Lovely brand — a branded credential to add to your beauty professional profile, covering communication in the beauty industry.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-beauty">Beauty</span>
+        <a href="https://glowandlovely.com/en/courses" class="cert-link" target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-purple">
+      <div class="card-top">
+        <span class="brand-badge">Positive Luxury</span>
+        <span class="free-badge">For Brands</span>
+      </div>
+      <div class="cert-title">Butterfly Mark — Sustainable Luxury Certification</div>
+      <div class="cert-desc">The globally respected sustainability certification for luxury brands. The Positive Luxury Council's Butterfly Mark validates luxury brands meeting the highest standards of ethical and sustainable practice.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-luxury">Luxury / Sustainability</span>
+        <a href="https://www.positiveluxury.com/butterfly-mark/" class="cert-link" target="_blank">Learn More</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ─── BONUS: EXTRA FREE CERTS ─── -->
+  <div class="section-header">
+    <div class="section-icon" style="background:#F0F5F0;">⭐</div>
+    <div class="section-title">Bonus &nbsp;Extra Recommended Certifications
+      <span>Worth Adding to Your Profile</span>
+    </div>
+  </div>
+
+  <div class="cert-grid">
+
+    <div class="cert-card accent-sage">
+      <div class="card-top">
+        <span class="brand-badge">SEMrush Academy</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">SEO Toolkit & Content Marketing</div>
+      <div class="cert-desc">Free certification on SEO fundamentals, keyword research, technical SEO, and content strategy using SEMrush's industry-leading tools.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-analytics">SEO</span>
+        <a href="https://www.semrush.com/academy/courses/" class="cert-link" target="_blank">Enroll Free</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-sage">
+      <div class="card-top">
+        <span class="brand-badge">HubSpot Academy</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">Content Marketing Certification</div>
+      <div class="cert-desc">Learn storytelling, content creation, promotion, and analysis to build content strategies that attract customers and search engines alike.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">Content</span>
+        <a href="https://academy.hubspot.com/courses/content-marketing" class="cert-link" target="_blank">Enroll Free</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-blue">
+      <div class="card-top">
+        <span class="brand-badge">Meta via Coursera</span>
+        <span class="free-badge">Audit Free</span>
+      </div>
+      <div class="cert-title">Meta Social Media Marketing Professional Certificate</div>
+      <div class="cert-desc">6-course Meta professional certificate covering social media strategy, advertising, analytics, and community management. Job-ready in under 7 months.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-social">Social Media</span>
+        <a href="https://www.coursera.org/professional-certificates/facebook-social-media-marketing" class="cert-link" target="_blank">Explore</a>
+      </div>
+    </div>
+
+    <div class="cert-card accent-gold">
+      <div class="card-top">
+        <span class="brand-badge">HubSpot Academy</span>
+        <span class="free-badge">Free</span>
+      </div>
+      <div class="cert-title">HubSpot CRM & Sales Certification</div>
+      <div class="cert-desc">Learn to manage the full sales funnel, use CRM effectively, lead management, and build modern sales team strategies. Great for beauty brand founders managing sales.</div>
+      <div class="card-footer">
+        <span class="cert-tag tag-ads">CRM / Sales</span>
+        <a href="https://academy.hubspot.com/courses" class="cert-link" target="_blank">Browse All</a>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<div class="divider"></div>
+<footer>
+  Free Certifications Guide &nbsp;·&nbsp; Compiled 2025–2026 &nbsp;·&nbsp; Always verify links are current before enrolling
+</footer>
+
+</body>
+</html>
